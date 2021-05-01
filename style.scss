@@ -1,0 +1,72 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: content-box;
+}
+
+$logoSize: 20px;
+$color: #e2e2e2;
+$navColor: #723cf0;
+
+.button{
+    border: none;
+    background: $color;
+    color: $navColor;
+    padding: 10px 20px;
+    border-radius:5px;
+
+}
+
+
+.nav{
+
+    background-color: $navColor;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 50px;
+
+    .nav{
+        &-item{
+            display: inline;
+            margin: 20px;
+        }
+    }
+
+
+    h4{
+        font-size: $logoSize;
+        color: $color;
+    }
+
+    ul{
+        a{
+            text-decoration: none;
+            color: $color;
+        }
+    }
+}
+
+.content{
+    text-align: center;
+}
+
+@mixin rounded-corners {
+    $rounded-corner-radius: 4px;
+    -webkit-border-radius: $rounded-corner-radius;
+    -moz-border-radius: $rounded-corner-radius;
+    -ms-border-radius: $rounded-corner-radius;
+    border-radius: $rounded-corner-radius;
+  }
+
+.btn{
+    @include rounded-corners;
+    margin: 100px auto;
+    text-decoration: none;
+    @extend .button;
+    display: inline-flex;
+    &:hover{
+        background-color: $navColor;
+        color: $color;
+    }
+}
+
